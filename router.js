@@ -39,7 +39,7 @@ routes["POST"][url] = action;
 
 const sendErrorResponse = res =>
 {
-res.weiteHead(httpStatus.NOT_FOUND,{
+res.writeHead(httpStatus.NOT_FOUND,{
 "Content-Type":"text/html"});
 
 res.write("<h1>File Not Found! </h1>");
@@ -58,26 +58,26 @@ customReadFile(`./views${url}`, res);
 res.writeHead(httpStatus.OK,{
 "Content-Type": "text/javascript"
 });
-customReadFile(` ./public/js${url}`, res);
+customReadFile(` ./Public/js${url}`, res);
 } else if (url.indexOf(".css")!== -1){
 res.writeHead(httpStatus.OK,{
 "Content-Type": "text/css"
 });
-customReadFile(`./public/css${url}`, res);
-} else if (url. indexOf(".png") !== -1) {
+customReadFile(`./Public/css${url}`, res);
+} else if (url.indexOf(".png") !== -1) {
 res.writeHead(httpStatus.OK,{
 "Content-Type": "image/png"
 });
-customReadFile(`./public/images${url}`, res);
+customReadFile(`./Public/images${url}`, res);
 } else {
 sendErrorResponse(res);
 }
 })
 .listen(3000);
-//console. log( `The server is listening on port number: ${port}` );
+//console.log( `The server is listening on port number: ${port}` );
 const customReadFile = (file_path, res) => {
-if (fs. existsSync(file_path)) {
-fs. readFile(file_path, (error, data) => {
+if (fs.existsSync(file_path)) {
+fs.readFile(file_path, (error, data) => {
 if (error) {
 console.log(error);
 sendErrorResponse(res);

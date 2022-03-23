@@ -9,7 +9,7 @@ htmlContentType = {
 "Content-Type": "text/html"},
 
 customReadFile = (file, res) => {
-fs. readFile(`./${file}` , (errors, data) => {
+fs.readFile(`./${file}` , (errors, data) => {
     if (errors) { 
     console.log("Error reading the file...");
     }
@@ -30,5 +30,5 @@ router.post("/", (req, res) => {
 res.writeHead(httpStatusCodes.OK, plainTextContentType);
 res.end("POSTED");
 });
-http.createServer(router.handle).listen(3000);
-//console.log( `The server is listening on port number: ${port}`);
+//http.createServer(router.handle).listen(3000);
+console.log( `The server is listening on port number: ${port}`);
