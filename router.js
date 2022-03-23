@@ -74,7 +74,7 @@ sendErrorResponse(res);
 }
 })
 .listen(3000);
-console. log( `The server is listening on port number: ${port}` );
+//console. log( `The server is listening on port number: ${port}` );
 const customReadFile = (file_path, res) => {
 if (fs. existsSync(file_path)) {
 fs. readFile(file_path, (error, data) => {
