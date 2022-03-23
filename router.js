@@ -1,4 +1,6 @@
+const fs = require("fs");
 const httpStatus = require("http-status-codes"),
+http = require("http"),
 htmlContentType = {
 "Content-Type": "text/html" },
 routes ={
